@@ -26,6 +26,8 @@ fi
 
 if [[ "$status" == "Playing" ]]; then
     echo '{"text": "  '"$title"'", "class": "playing"}'
-else
+elif [[ "$status" == "Paused" ]]; then
     echo '{"text": "  '"$title"'", "class": "paused"}'
+else
+    echo '{"text": "", "class":""}'
 fi

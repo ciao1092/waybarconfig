@@ -293,8 +293,16 @@ label:focus {
 }
 
 #custom-media {
-	background-color: #48613c;
+	background-color: #515151;
 	padding: 0 6px;
+}
+
+#custom-media.playing {
+	background-color: #7aa367;
+}
+
+#custom-media.paused {
+	background-color: #48613c;
 }
 
 #keyboard-state > label {
