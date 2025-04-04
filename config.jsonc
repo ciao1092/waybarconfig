@@ -27,6 +27,8 @@
 	"keyboard-state",
         "battery",
         "clock",
+	"custom/media",
+//	"mpd",
         "tray",
 	"custom/power"
     ],
@@ -121,7 +123,7 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", ""]
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -171,7 +173,7 @@
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "  {format_source}",
+        "format-muted": "{volume}%   {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
@@ -191,10 +193,19 @@
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
+			"poweroff": "systemctl poweroff",
+			"reboot": "systemctl reboot",
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}
-    }
+    },
+	"custom/media": {
+		"exec": "~/.config/waybar/scripts/player-status.sh",
+		"return-type": "json",
+		"format": "{}",
+		"interval": 3,
+		"signal": 10,
+		"on-click": "playerctl play-pause; pkill -RTMIN+10 waybar",
+		"on-click-right": "playerctl next",
+	}
 }

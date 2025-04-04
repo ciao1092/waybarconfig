@@ -292,6 +292,11 @@ label:focus {
   min-width: 16px;
 }
 
+#custom-media {
+	background-color: #48613c;
+	padding: 0 6px;
+}
+
 #keyboard-state > label {
   padding: 0 15px;
 }
