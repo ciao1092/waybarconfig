@@ -203,7 +203,7 @@
 		"exec": "~/.config/waybar/scripts/player-status.sh",
 		"return-type": "json",
 		"format": "{}",
-		"interval": 3,
+		"interval": 1,
 		"signal": 10,
 		"on-click": "playerctl play-pause; pkill -RTMIN+10 waybar",
 		"on-click-right": "playerctl next",
