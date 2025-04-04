@@ -8,13 +8,14 @@
     // Choose the order of the modules
     "modules-left": [
         "sway/workspaces",
+        // "sway/window",
         "sway/mode",
         "sway/scratchpad"
     ],
-    "modules-center": [
-        "sway/window"
-    ],
     "modules-right": [
+        
+    ],
+    "modules-center": [
         "idle_inhibitor",
         "pulseaudio",
         "network",
@@ -219,7 +220,8 @@
             "poweroff": "systemctl poweroff",
             "reboot": "systemctl reboot",
             "suspend": "systemctl suspend",
-            "hibernate": "systemctl hibernate"
+            "hibernate": "systemctl hibernate",
+            "logout": "swaymsg exit"
         }
     },
     "custom/media": {
