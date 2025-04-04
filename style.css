@@ -183,10 +183,12 @@ label:focus {
 #cpu {
   background-color: #2ecc71;
   color: #000000;
+  padding: 0 15px 0 10px;
 }
 
 #memory {
   background-color: #9b59b6;
+  padding: 0 15px 0 10px;
 }
 
 #disk {
@@ -195,6 +197,7 @@ label:focus {
 
 #backlight {
   background-color: #90b1b1;
+  padding: 0 10px 0 10px;
 }
 
 #network {
@@ -236,6 +239,7 @@ label:focus {
 
 #temperature {
   background-color: #f0932b;
+  padding: 0 15px 0 10px;
 }
 
 #temperature.critical {
@@ -285,9 +289,10 @@ label:focus {
 #language {
   background: #00b093;
   color: #740864;
-  padding: 0 5px;
-  margin: 0 5px;
+  /* padding: 0 5px; */
+  /* margin: 0 5px; */
   min-width: 16px;
+  padding: 0 10px 0 10px;
 }
 
 #keyboard-state {
