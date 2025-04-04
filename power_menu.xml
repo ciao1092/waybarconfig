@@ -15,7 +15,7 @@
       <object class="GtkSeparatorMenuItem" id="delimiter1"/>
     </child>
     <child>
-        <object class="GtkMenuItem" id="shutdown">
+        <object class="GtkMenuItem" id="poweroff">
 			<property name="label">Shutdown</property>
         </object>
     </child>
