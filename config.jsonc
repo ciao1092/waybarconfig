@@ -23,14 +23,14 @@
         "memory",
         "temperature",
         "backlight",
-//        "sway/language",
-	"keyboard-state",
+        //        "sway/language",
+        "keyboard-state",
         "battery",
         "clock",
-	"custom/media",
-//	"mpd",
+        "custom/media",
+        //	"mpd",
         "tray",
-	"custom/power"
+        "custom/power"
     ],
     // Modules configuration
     "sway/workspaces": {
@@ -64,7 +64,10 @@
     "sway/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
-        "format-icons": ["", ""],
+        "format-icons": [
+            "",
+            ""
+        ],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
@@ -123,12 +126,22 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
     },
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
+        "format-icons": [
+            "🌑",
+            "🌘",
+            "🌗",
+            "🌖",
+            "🌕"
+        ]
     },
     "battery": {
         "states": {
@@ -143,21 +156,27 @@
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
     "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -183,29 +202,33 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
         "on-click": "pavucontrol"
     },
     "custom/power": {
-        "format" : "⏻",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"poweroff": "systemctl poweroff",
-			"reboot": "systemctl reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
+        "format": "⏻",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        "menu-actions": {
+            "poweroff": "systemctl poweroff",
+            "reboot": "systemctl reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
     },
-	"custom/media": {
-		"exec": "~/.config/waybar/scripts/player-status.sh",
-		"return-type": "json",
-		"format": "{}",
-		"interval": 1,
-		"signal": 10,
-		"on-click": "playerctl play-pause; pkill -RTMIN+10 waybar",
-		"on-click-right": "playerctl next",
-	}
+    "custom/media": {
+        "exec": "~/.config/waybar/scripts/player-status.sh",
+        "return-type": "json",
+        "format": "{}",
+        "interval": 1,
+        "signal": 10,
+        "on-click": "playerctl play-pause; pkill -RTMIN+10 waybar",
+        "on-click-right": "playerctl next"
+    }
 }
