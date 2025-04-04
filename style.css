@@ -102,8 +102,8 @@ button:hover {
 #mpd,
 #custom-power {
   /* padding: 0 10px; */
-  padding-left: 10px;
-  padding-right: 15px;
+  padding: 0;
+  margin: 0;
   color: #ffffff;
 }
 
@@ -124,11 +124,13 @@ button:hover {
 
 #clock {
   background-color: #64727d;
+  padding: 0 10px;
 }
 
 #battery {
   background-color: #ffffff;
   color: #000000;
+  padding: 0 15px 0 10px;
 }
 
 #battery.charging,
@@ -156,7 +158,7 @@ button:hover {
 }
 
 #power-profiles-daemon {
-  padding-right: 15px;
+  padding: 0 15px 0 10px;
 }
 
 #power-profiles-daemon.performance {
@@ -197,6 +199,7 @@ label:focus {
 
 #network {
   background-color: #2980b9;
+  padding: 0 15px 0 10px;
 }
 
 #network.disconnected {
@@ -206,6 +209,7 @@ label:focus {
 #pulseaudio {
   background-color: #90b1b1;
   color: #2a5c45;
+  padding: 0 15px 0 10px;
 }
 
 #pulseaudio.muted {
@@ -225,6 +229,7 @@ label:focus {
 #custom-power {
   background-color: #000000;
   color: #ffffff;
+  padding: 0 15px 0 10px;
   /* min-width: 50px; */
   /* font-size: 14pt; */
 }
@@ -251,7 +256,8 @@ label:focus {
 }
 
 #idle_inhibitor {
-  background-color: #2d3436;
+  background-color: #64727d;
+  padding: 0 20px 0 10px;
 }
 
 #idle_inhibitor.activated {

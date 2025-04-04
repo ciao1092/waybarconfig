@@ -12,25 +12,25 @@
         "sway/mode",
         "sway/scratchpad"
     ],
-    "modules-right": [
+    "modules-center": [
         
     ],
-    "modules-center": [
-        "idle_inhibitor",
+    "modules-right": [
         "pulseaudio",
         "network",
         "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "temperature",
-        "backlight",
-        //        "sway/language",
+        // "cpu",
+        // "memory",
+        // "temperature",
+        // "backlight",
+        // "sway/language",
         "keyboard-state",
         "battery",
         "clock",
         "custom/media",
-        //	"mpd",
+        // "mpd",
         "tray",
+        "idle_inhibitor",
         "custom/power"
     ],
     // Modules configuration
@@ -52,7 +52,7 @@
     },
     "keyboard-state": {
         "numlock": true,
-        "capslock": true,
+        "capslock": false,
         "format": "{name} {icon}",
         "format-icons": {
             "locked": "",
@@ -101,7 +101,7 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "awake ",
+            "activated": "",
             "deactivated": ""
         }
     },
