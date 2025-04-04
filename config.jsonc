@@ -8,12 +8,11 @@
     // Choose the order of the modules
     "modules-left": [
         "sway/workspaces",
-        // "sway/window",
         "sway/mode",
         "sway/scratchpad"
     ],
     "modules-center": [
-        
+        "sway/window"
     ],
     "modules-right": [
         "pulseaudio",
@@ -25,11 +24,11 @@
         // "backlight",
         // "sway/language",
         "keyboard-state",
-        "battery",
         "clock",
         "custom/media",
         // "mpd",
         "tray",
+        "battery",
         "idle_inhibitor",
         "custom/power"
     ],
@@ -181,12 +180,13 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-alt": "{ifname}: {ipaddr}/{cidr} [{essid} @ {signalStrength}%]",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-wifi": "",
+        "format-disconnected": "Disconnected ⚠" /*,*/
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
