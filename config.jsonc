@@ -6,19 +6,19 @@
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": [
+	"clock",
         "sway/workspaces",
         "sway/mode",
         "sway/scratchpad"
     ],
     "modules-center": [
-        "sway/window"
+        "sway/window",
     ],
     "modules-right": [
-        "pulseaudio",
         "network",
         "power-profiles-daemon",
         "keyboard-state",
-        "clock",
+        "pulseaudio",
         "custom/media",
         "tray",
         "battery",
