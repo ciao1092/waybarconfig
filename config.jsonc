@@ -146,7 +146,8 @@
                 " "
             ]
         },
-        "on-click": "pavucontrol"
+        "on-click-right": "pavucontrol",
+	"on-click": "~/.config/waybar/scripts/toggle-mute.sh"
     },
     "custom/power": {
         "format": "⏻",
