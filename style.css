@@ -1,12 +1,12 @@
 * {
-  font-family: "UbuntuMono Nerd Font";
+  font-family: "CaskaydiaCove Nerd Font";
   /* , "Adwaita Mono", "Noto Sans Mono", "Font Awesome 6 Free", "Font Awesome 6 Brands", monospace; */
-  font-size: 12pt;
+  font-size: 10pt;
 }
 
 window#waybar {
-  /* background-color: rgba(43, 48, 59, 0.9); */
-  background-color: #282828;
+  background-color: rgba(43, 48, 59, 0.3);
+  /*background-color: #282828;*/
   /*    border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
   color: #ebdbb2;
   transition-property: background-color;
@@ -77,10 +77,10 @@ button:hover {
 }
 
 #workspaces button.focused {
-  background-color: #458588;
+  /* background-color: #458588; */
   /* color: #282828; */
   color: #FBF1C7;
-  /* box-shadow: inset 0 -3px #ffffff; */
+  box-shadow: inset 0 -3px #ffffff;
 }
 
 #workspaces button.urgent {
@@ -134,12 +134,12 @@ button:hover {
 }
 
 #clock {
-  background-color: #504945;
+  /* background-color: #504945; */
   padding: 0 10px;
 }
 
 #battery {
-  background-color: #504955;
+  /* background-color: #504955; */
   padding: 0 15px 0 10px;
 }
 
@@ -175,18 +175,18 @@ button:hover {
   background-color: #fb4934;
 }
 
-#power-profiles-daemon.balanced {
+/* #power-profiles-daemon.balanced {
   background-color: #504945;
-}
+} */
 
 #power-profiles-daemon.power-saver {
   background-color: #b8bb26;
   color: #282828;
 }
 
-label:focus {
+/* label:focus {
   background-color: #282828;
-}
+} */
 
 /* #cpu {
   background-color: #8ec07c;
@@ -210,7 +210,7 @@ label:focus {
 } */
 
 #network {
-  background-color: #504945;
+  /* background-color: #504945; */
   padding: 0 15px 0 10px;
 }
 
@@ -219,7 +219,7 @@ label:focus {
 }
 
 #pulseaudio {
-  background-color: #504945;
+  /* background-color: #504945; */
   /* color: #2a5c45; */
   padding: 0 15px 0 10px;
 }
@@ -239,11 +239,16 @@ label:focus {
 } */
 
 #custom-power {
-  background-color: #000000;
-  color: #ffffff;
-  padding: 0 15px 0 10px;
+  /* background-color: #000000; */
+  /* color: #ffffff; */
+  padding: 0 17px 0 12px;
   /* min-width: 50px; */
   /* font-size: 14pt; */
+}
+
+#custom-power:active,
+#custom-power:hover {
+  background-color: #665c54;
 }
 
 #temperature {
@@ -256,7 +261,7 @@ label:focus {
 }
 
 #tray {
-  background-color: #2980b9;
+  /* background-color: #2980b9; */
   padding: 0 10px 0 10px;
 }
 
@@ -270,8 +275,8 @@ label:focus {
 }
 
 #idle_inhibitor {
-  background-color: #504945;
-  padding: 0 20px 0 10px;
+  /* background-color: #504945; */
+  padding: 0 17px 0 12px;
 }
 
 #idle_inhibitor:hover {
@@ -314,14 +319,14 @@ label:focus {
 } */
 
 #keyboard-state {
-  background: #504945;
+  /* background: #504945; */
   padding: 0 0px;
   /* margin: 0 5px; */
   min-width: 16px;
 }
 
 #custom-media {
-  background-color: #515151;
+  /* background-color: #515151; */
   padding: 0 6px;
 }
 
