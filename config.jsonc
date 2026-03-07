@@ -78,7 +78,7 @@
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%H:%M %Y-%m-%d}"
     },
     "battery": {
         "states": {
@@ -92,7 +92,7 @@
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
+        "format-full": "",
         "format-icons": [
             "",
             "",
@@ -117,12 +117,14 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-alt": "{ifname}: {ipaddr}/{cidr} [{essid} @ {signalStrength}%]",
-        "format-ethernet": "{ipaddr}/{cidr} ",
+        //"format-alt": "{ifname}: {ipaddr}/{cidr} [{essid} @ {signalStrength}%]",
+	"format-alt": "IP: {ipaddr}/{cidr}",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
-        "format-wifi": "",
-        "format-disconnected": "Disconnected ⚠" /*,*/
+        //"format-wifi": "",
+        "format-wifi": "{ifname}: {essid} ({signalStrength}%) ",
+	"format-disconnected": "Disconnected ⚠" /*,*/
         // "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
