@@ -168,7 +168,7 @@
     "custom/notification": {
         "tooltip": true,
         "tooltip-format": "{0} new notification(s)",
-        "format": "<span size=\"13pt\">{icon}</span>",
+        "format": " <span size=\"11pt\">{0} {icon}</span>",
         "format-icons": {
             "notification": "󱅫 ",
             "none": "󰂜 ",
