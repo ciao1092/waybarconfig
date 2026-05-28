@@ -1,5 +1,9 @@
 #!/bin/bash
 
+wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+exit
+
 mic_status=$(amixer get Capture | grep -oP '\[on\]|\[off\]' | head -n 1)
 
 master_status=$(amixer get Master | grep -oP '\[on\]|\[off\]' | head -n 1)
