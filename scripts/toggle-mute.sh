@@ -1,19 +1,21 @@
 #!/bin/bash
 
-wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+SINK="@DEFAULT_AUDIO_SINK@"
+SOURCE="@DEFAULT_AUDIO_SOURCE@"
 
-exit
+sink_mute=$(wpctl get-volume "$SINK" | grep -o "MUTED")
+source_mute=$(wpctl get-volume "$SOURCE" | grep -o "MUTED")
 
-mic_status=$(amixer get Capture | grep -oP '\[on\]|\[off\]' | head -n 1)
-
-master_status=$(amixer get Master | grep -oP '\[on\]|\[off\]' | head -n 1)
-
-if [[ "$mic_status" == "[on]" ]]; then
-    amixer set Master mute        # Mute the Master
-    amixer set Capture toggle     # Toggle the mic (mute or unmute)
-elif [[ "$master_status" == "[on]" ]]; then
-    amixer set Master mute        # Mute the Master
+# Toggle microphone first (independent of output state)
+if [[ "$source_mute" == "MUTED" ]]; then
+    wpctl set-mute "$SOURCE" 0
 else
-    amixer set Master toggle      # Toggle the Master
-    amixer set Capture toggle     # Toggle the mic
+    wpctl set-mute "$SOURCE" 1
+fi
+
+# Then toggle audio output
+if [[ "$sink_mute" == "MUTED" ]]; then
+    wpctl set-mute "$SINK" 0
+else
+    wpctl set-mute "$SINK" 1
 fi
