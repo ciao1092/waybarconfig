@@ -3,19 +3,17 @@
 SINK="@DEFAULT_AUDIO_SINK@"
 SOURCE="@DEFAULT_AUDIO_SOURCE@"
 
-sink_mute=$(wpctl get-volume "$SINK" | grep -o "MUTED")
-source_mute=$(wpctl get-volume "$SOURCE" | grep -o "MUTED")
+mic_status=$(wpctl get-volume "$SOURCE" | grep -q "MUTED" && echo "[off]" || echo "[on]")
+master_status=$(wpctl get-volume "$SINK" | grep -q "MUTED" && echo "[off]" || echo "[on]")
 
-# Toggle microphone first (independent of output state)
-if [[ "$source_mute" == "MUTED" ]]; then
-    wpctl set-mute "$SOURCE" 0
-else
-    wpctl set-mute "$SOURCE" 1
-fi
+if [[ "$mic_status" == "[on]" ]]; then
+    wpctl set-mute "$SINK" 1        # Mute the Master
+    wpctl set-mute "$SOURCE" toggle # Toggle the mic
 
-# Then toggle audio output
-if [[ "$sink_mute" == "MUTED" ]]; then
-    wpctl set-mute "$SINK" 0
+elif [[ "$master_status" == "[on]" ]]; then
+    wpctl set-mute "$SINK" 1        # Mute the Master
+
 else
-    wpctl set-mute "$SINK" 1
+    wpctl set-mute "$SINK" toggle   # Toggle the Master
+    wpctl set-mute "$SOURCE" toggle # Toggle the mic
 fi
