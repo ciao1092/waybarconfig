@@ -9,23 +9,36 @@
         "clock",
         "sway/mode",
         "sway/workspaces",
-        "sway/scratchpad"
-    ],
-    "modules-center": [
+        "sway/scratchpad",
         "sway/window"
     ],
+    "modules-center": [
+    ],
     "modules-right": [
-        "network",
-        "power-profiles-daemon",
+    	"network",
         "keyboard-state",
         "pulseaudio",
         "custom/media",
-        "tray",
         "battery",
+        "power-profiles-daemon",
+        "tray",
+//        "bluetooth",
         "idle_inhibitor",
         "custom/notification",
         "custom/power"
     ],
+    "bluetooth": {
+	"format": "{status} ",
+	"format-connected": "{num_connections} connected ",
+	"on-click": "blueman-manager"
+    },
+    "sway/window": {
+	"format": " {}",
+	"expand": true,
+	"icon": false,
+	"icon-size": 14,
+	"rewrite": {}
+    },
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
@@ -45,7 +58,8 @@
     },
     "keyboard-state": {
         "numlock": true,
-        "capslock": false,
+        "capslock": true,
+        "scrolllock": false,
         "format": "{name} {icon}",
         "format-icons": {
             "locked": "",
@@ -56,7 +70,7 @@
         "format": "<span style=\"italic\">{}</span>"
     },
     "sway/scratchpad": {
-        "format": "{icon} {count}",
+        "format": " {icon} {count} ",
         "show-empty": false,
         "format-icons": [
             "",
@@ -91,7 +105,7 @@
         "format-full": "{capacity}% {icon}",
         "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format-alt": "{capacity}% {icon}  {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": [
@@ -124,7 +138,7 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         //"format-wifi": "",
-        "format-wifi": "{ifname}: {essid} ({signalStrength}%) ",
+        "format-wifi": "{ifname}: {essid} ({signalStrength}%)",
         "format-disconnected": "Disconnected ⚠" /*,*/
         // "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
@@ -224,5 +238,5 @@
             "🌖",
             "🌕"
         ]
-    }
+    },
 }
